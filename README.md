@@ -16,3 +16,5 @@ HOWTO run:
   - Run *src/main.py* (you may have to shift lichess to another monitor) to play exactly one rated game.
 
   Feel free to change any bot related stuff in stockfish_config.yaml (by default custom_stockfish is used in src/main.py)
+
+Demo is available at twitch.tv/hidancloud (you can watch VODs if they are available)
