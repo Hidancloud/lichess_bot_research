@@ -8,7 +8,7 @@ HOWTO run:
   - Fill the *"path_to_stockfish"* field (path to .exe) in *configs/stockfish_config.yaml* (by default SF is intended to be located in the project folder)
   - Open *lichess.org*, restore all settings to default (or create new account)
   - Set up the desired mode at the timer slider and close it
-  - Fill with corresponding values: *total_time_in_minutes* and *increment_in_seconds* at *configs/timer_parameters.yaml*
+  - Fill with corresponding values: *total_time_in_minutes* and *increment_in_seconds* at *configs/timer_parameters.yaml* (bullet 2 + 1 by default)
   - Open Full Screen (*F11*)
   - Run *main.py* (you may have to shift lichess to another monitor)
   
