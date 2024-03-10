@@ -10,5 +10,5 @@ HOWTO run:
   - Set up the desired mode at the timer slider and close it
   - Fill with corresponding values: *total_time_in_minutes* and *increment_in_seconds* at *configs/timer_parameters.yaml* (bullet 2 + 1 by default)
   - Open Full Screen (*F11*)
-  - Run *main.py* (you may have to shift lichess to another monitor)
+  - Run *src/main.py* (you may have to shift lichess to another monitor)
   
