@@ -283,7 +283,7 @@ class TimeManagement(metaclass=Singleton):
             # else think as normal, but without already spent for premove time (90% time left)
             premove = engine.get_best_move_time(int(init_time_to_think * 1000 * 0.1))
             if engine.will_move_be_a_capture(premove) != Stockfish.Capture.NO_CAPTURE:
-                think_time = min(init_time_to_think * 0.2, 0.9)
+                think_time = min(init_time_to_think * 0.2, 0.9)  # make a fast move
             else:
                 think_time = init_time_to_think * 0.9
 
