@@ -1,0 +1,57 @@
+timer_settings:
+  total_time_in_minutes: 2
+  increment_in_seconds: 1
+  ping: 0.23  # artificial delay that we add per each move
+  delay_per_move: 0.3  # natural delay of our algorithms per each move
+
+strategy_constants:
+  debut_stage:
+    length: 12
+
+    slow_moves:
+      min_number: 1
+      max_number: 4  # inclusively
+      time_multiplier: 1.5
+
+    normal_moves:
+      min_number: 3
+      max_number: 5  # inclusively
+      time_multiplier: 0.75
+
+    fast_moves:  # fast moves number >= 5 (or change _init_time_strategy)
+      min_number: 5
+      max_number: 6  # inclusively
+      time_multiplier: 0.2
+
+  middle_game_stage:
+    length: 20
+
+    slow_moves:
+      min_number: 2
+      max_number: 2  # inclusively (equals to this number)
+      time_multiplier_1: 4
+      time_multiplier_2: 1.5
+
+    normal_moves:
+      min_number: 9
+      max_number: 9  # inclusively (equals to this number)
+      time_multiplier: 1.5
+
+    fast_moves:
+      min_number: 9
+      max_number: 9  # inclusively (equals to this number)
+      time_multiplier: 0.2
+
+  endgame_stage:
+    length: 200
+    time_to_sonic_speed: 8
+
+    slow_moves:
+      chance: 0.25
+      time_multiplier: 4.5
+
+    fast_moves:
+      chance: 0.5
+      time_multiplier: 0.6
+
+  fast_move_max_time: 0.9  # max time for fast move (like capture) in seconds
