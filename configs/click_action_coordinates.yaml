@@ -1,0 +1,40 @@
+click_new_opponent:
+  x: 1600
+  y: 615
+
+decline_takeback:
+  x: 1430
+  y: 650
+
+decline_draw_offer:
+  x: 1430
+  y: 650
+
+hard_restart:
+  play:
+    x: 265
+    y: 30
+
+  approve_leave_page:  # Leave page blue box; probably not so much sense to do it in logged mode
+    x: 1000
+    y: 580
+
+  create_game:
+    x: 1490
+    y: 280
+
+  start_search:
+    x: 950
+    y: 790
+
+gentle_good_luck:
+  x: 250
+  y: 945
+
+gentle_have_fun:
+  x: 335
+  y: 945
+
+gentle_add_time:
+  x: 1770
+  y: 410

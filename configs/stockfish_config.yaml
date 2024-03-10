@@ -1,0 +1,100 @@
+path_to_stockfish: '../stockfish_16/stockfish-windows-x86-64-avx2.exe'
+
+bot_power_settings:
+  default_stockfish:
+    api:
+      Threads: 6
+      Hash: 1024
+    skill_level: 20  # default value, can be skipped
+
+  strongest_stockfish:
+    api:
+      Threads: 6
+      Hash: 4096
+    skill_level: 20  # default value, can be skipped
+
+  fast_stockfish:
+    api:
+      Threads: 1
+      Hash: 256
+    skill_level: 20  # default value, can be skipped
+
+  stupid_stockfish:
+    api:
+      Threads: 1
+      Hash: 4
+    elo_rating: 300
+
+  stupid_stockfish_unchecked:
+    api:
+      Threads: 1
+      Hash: 4
+    skill_level: 0
+
+  custom_stockfish:
+    api:
+      Threads: 1
+      Hash: 8
+    elo_rating: 1850
+
+openings:
+  game_ruins:
+    [
+      [ 'g1f3', 'f3g5', 'g5f7' ],  # game_ruin (king's knight sacrifice)
+      [ 'g2g3', 'f1g2', 'g2c6' ],  # game_ruin (king's bishop sacrifice)
+      [ 'b2b3', 'c1b2', 'b2f6' ],  # feed queen's bishop
+      [ 'd2d4', 'c2c4', 'c1g5' ],  # my opening OR sacrifice queen's bishop
+      [ 'b1c3', 'c3b1', 'b1c3', 'c3b1', 'b1c3', 'c3b1', 'b1c3', 'c3b1' ]  # 8 trash knight moves
+    ]
+
+  bullet_weak:
+    [
+      ['g1f3', 'f3g5', 'g5f7' ],  # knight sacrifice
+      [ 'g1f3', 'f3g5', 'g5f7', 'f2f3', 'e1f2' ],  # knight sacrifice + king out
+      [ 'b2b4', 'g2g4', 'g1h3', 'h1g1', 'a1b1' ],  # 2nd rank side pawns forward and rooks lift, no castle
+      [ 'g2g3', 'f1g2', 'g2c6' ],  # feed king's bishop
+      [ 'b2b3', 'c1b2', 'b2f6' ],  # feed queen's bishop
+      [ 'c2c3', 'd1b3', 'e1d1' ],  # queen lift, no castle
+      [ 'e2e4', 'c2c3', 'd2d4' ],  # central pawns attack
+      [ 'd2d4', 'b1c3', 'f2f3', 'e2e4' ],  # central pawns attack (Boor attack kinda)
+      [ 'd2d4', 'c2c4', 'c1g5' ],  # my opening OR sacrifice queen's bishop
+      [ 'e2e3', 'f1e2', 'e1f1' ],  # no castle (the same as 2 + 1)
+      [ 'f2f3', 'e1f2', 'g1h3' ],  # knight at the border + terrible pawn + no castle
+    ]
+
+  bullet_normal:
+    [
+      ['e2e3', 'e1e2', 'h2h4', 'e2d3'],  # king out + h4
+      ['a2a4', 'a4a5', 'a5a6', 'h2h4'],  # side pawns attack a2-a6, h4
+      ['f2f3', 'e1f2', 'c2c3', 'b2b3'],  # king without castle + waste some moves
+      ['g2g4', 'b2b3', 'a2a3', 'b1c3'],  # 2nd rank side pawns forward + waste 2 moves
+      ['b1c3', 'c3b1', 'g1f3', 'f3g1'],  # waste of 4 moves by knights
+      ['g1f3', 'f3g1', 'b1c3', 'c3b1'],  # waste of 4 moves by knights
+      ['e2e3', 'f1e2', 'e1f1'],  # waste of castling + 2 moves
+      ['h2h3', 'h1h2'],  # rook lift by 1 cell, waste king-side castle
+      ['h2h3', 'h1h2', 'f2f3'],  # rook lift by 1 cell, waste king-side castle + 1 move waste
+      # ['a2a3', 'a1a2'],  # rook lift by 1 cell
+      ['b1a3', 'g1h3', 'h1g1'],  # knights to the side, waste king-side castle
+      ['b1a3', 'g1h3', 'h1g1', 'a1b1'],  # knights to the side, waste any castle
+      ['f2f3', 'e2e3', 'e1f2', 'g1e2', 'g2g3', 'f2g1'],  # king to the corner + long seq
+      ['d2d3', 'b1d2', 'e2e3', 'g1e2'],  # both knight centered, symmetric structure
+      ['f2f4', 'e2e4'],  # bird's opening: kings pawns marche
+      ['f2f4', 'e1f2'],  # bird's opening: kings pawns marche + feed king
+      ['f2f4'],  # bird's opening
+      ['f2f3', 'e2e4'],  # king's pawns attack
+      ['e2e4', 'c2c3', 'd2d4'],  # central pawns attack
+      ['f2f3', 'g1h3'],  # knight at the border + terrible pawn
+      ['d2d3', 'f2f3', 'h2h3', 'b2b3', 'g2g4', 'c2c4', 'a2a4'],  # odd system /\/\/\/\
+      ['e2e3', 'g2g3', 'c2c3', 'a2a3', 'f1f3', 'b2b4', 'd2d4'],  # odd system 2
+      ['e2e4', 'a2a4', 'c2c4', 'g2g4'],  # all pawns launch
+      ['d2d4', 'b2b4', 'f2f4', 'h2h4'],  # all pawns launch 2
+      ['c2c4', 'd2d3', 'g1f3', 'g2g3'],  # Sicilian
+    ]
+
+  strong:
+    [
+      ['e2e4'], ['e2e4'], ['e2e4'],  ['d2d4'], ['d2d4'], ['b2b3', 'g2g3'],  # just strong
+      ['g1h3', 'b1a3', 'g2g4', 'g4g5'],   # Amar opening modified
+      [ 'g2g4', 'g4g5', 'g5g6' ],  # Grob's attach modified
+      [ 'g2g4', 'f1g2', 'c2c4' ],  # Grob's opening
+    ]
