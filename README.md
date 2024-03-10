@@ -1,6 +1,6 @@
  The repository contains an automatic bot playing on lichess.org from your computer. 
  It immitates human thinking time, can be fast and plays on elo which you choose.
- It does work out of the box on Mozilla with Incognito mode with 1920x1080 resolution (you can open lichess tab on the second monitor).
+ It does work out of the box on Mozilla with Incognito mode on Windows with 1920x1080 resolution (you can open lichess tab on the second monitor).
 
 In other scenarios all the bbox coordinates at *configs/screenshot_boxes.yaml* and *configs/click_action_coordinates.yaml* should be tuned. 
 Automatic recognition of relevant fields is not implemented (yet!)
